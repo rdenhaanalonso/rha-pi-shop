@@ -78,7 +78,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _getCategoryObject: function(categoryName) {
-        console.log('shop-category-data', '_getCategoryObject', categoryName);
+        //console.log('shop-category-data', '_getCategoryObject', categoryName);
         for (var i = 0, c; c = this.categories[i]; ++i) {
           if (c.name === categoryName) {
             return c;
@@ -88,7 +88,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _computeCategory: function(categoryName) {
-        console.log('shop-category-data', '_computeCategory', categoryName);
+        //console.log('shop-category-data', '_computeCategory', categoryName);
         // Fetch the items of the category. Note that the fetch is asynchronous,
         // which means `category.items` may not be set initially (but that path
         // will be notified when the fetch completes).
@@ -98,17 +98,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       },
 
       _computeItem: function(items, itemName) {
-        console.log('shop-category-data', '_computeItem', itemName);
+        //console.log('shop-category-data', '_computeItem', itemName);
         for (var i = 0, item; item = items[i]; ++i) {
           if (item.name == itemName) {
-            var userId = this.$.userId.value;
-
-            console.log('UserId: ' + userId + ', ItemViewed: ' + itemName);
-            _etmc.push(["setOrgId", "1408165"]);
-            if (userId && userId.lengt > 0) _etmc.push(["setUserInfo", {"email": userId}]);
-            _etmc.push(["trackPageView", { "search" : term }]);
-            _etmc.push(["setOrgId", "1408165"]);
-            _etmc.push(["trackPageView", { "item" : item.name }]);
             return item;
           }
         }

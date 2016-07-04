@@ -260,7 +260,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </a>
         </div>
         <div>
-          <paper-input label="userId" id="userId" on-keydown="_onEnterSearch">
+          <paper-input label="userId" id="userId" on-keydown="_onEnterUserID">
             <iron-icon icon="verified-user" prefix></iron-icon>
             <paper-icon-button icon="verified-user" alt="verified-user" title="User"></paper-icon-button>
           </paper-input>
@@ -473,6 +473,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       // Elements in the app can notify section changes.
       // Response by a11y announcing the section and syncronizing the category.
       _onChangeSection: function(event) {
+        //console.log('_onChangeSection', event.detail);
         var detail = event.detail;
         this.categoryName = detail.category || '';
         // Announce the page's title
@@ -547,15 +548,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         return quantity + ' ' + (quantity === 1 ? 'item' : 'items');
       },
 
+      _onEnterUserID: function(e){
+        //SFMC PI
+        if (e.keyCode === 13) {
+          var userId = this.$.userId.value;
+          if (userId && userId.length > 0) {
+            console.log('PI SET_USER_INFO event... User: ' + userId);
+            _etmc.push(["setOrgId", "1408165"]);
+            _etmc.push(["setUserInfo", {"email": userId}]);
+            _etmc.push(["trackPageView"]);
+          }
+        }
+      },
+
       _onEnterSearch: function (e) {
+        //SFMC PI
         if (e.keyCode === 13) {
           var term = this.$.inputSearch.value;
-          var userId = this.$.userId.value;
-
-          console.log('UserId: ' + userId + ', SearchTerm: ' + term);
-          _etmc.push(["setOrgId", "1408165"]);
-          if (userId && userId.lengt > 0) _etmc.push(["setUserInfo", {"email": userId}]);
-          _etmc.push(["trackPageView", { "search" : term }]);
+          if (term && term.length > 0) {
+            console.log('PI SEARCH event... SearchTerm: ' + term);
+            _etmc.push(["setOrgId", "1408165"]);
+            _etmc.push(["trackPageView", { "search" : term }]);
+          }
         }
       }
     });

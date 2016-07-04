@@ -130,15 +130,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
     </style>
-    <span>[[_log(item)]]</span>
-
     <!--
       app-route provides the name of the category and the item.
     -->
     <app-route
         route="[[route]]"
         pattern="/:category/:item"
-        data="{{routeData}}"></app-route>
+        data="{{routeData}}">
+    </app-route>
 
     <!--
       shop-category-data provides the item data for a given category and item name.
@@ -225,7 +224,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           observer: '_offlineChanged'
         },
 
-        failure: Boolean
+        failure: Boolean,
+
+        userId: String
 
       },
 
@@ -235,7 +236,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _itemChanged: function(item, visible) {
 
-        console.log('shop-detail', '_itemChanged', item, visible);
+        console.log('shop-detail', '_itemChanged', item.name, visible);
         if (visible) {
           this.debounce('item-change', function() {
             // The item description contains escaped HTML (e.g. "&lt;br&gt;"), so we need to
@@ -251,6 +252,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               category: item.category,
               title: item.title
             });
+
+            //var userId = this.$.userId.value;
+            var userId = '';
+            console.log(this);
+            console.log('UserId: ' + userId);
+            //_etmc.push(["setOrgId", "1408165"]);
+            //if (userId && userId.lengt > 0) _etmc.push(["setUserInfo", {"email": userId}]);
+            //_etmc.push(["trackPageView", { "search" : term }]);
+            //_etmc.push(["setOrgId", "1408165"]);
+            //_etmc.push(["trackPageView", { "item" : item.name }]);
           });
         }
       },
@@ -290,11 +301,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         if (!offline) {
           this._tryReconnect();
         }
-      },
-
-      _log(item){
-        console.log('shop-detail', item);
-        return;
       }
 
     });
