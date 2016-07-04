@@ -9,6 +9,10 @@ Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 
     npm install -g polymer-cli
 
+Create a Firebase account
+
+Install Firebase cli
+
 
 ##### Setup
 
@@ -33,7 +37,11 @@ Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 This command serves the minified version of the app in an unbundled state, as it would be served by a push-compatible server:
 
     polymer serve build/unbundled
-    
+
 This command serves the minified version of the app generated using fragment bundling:
 
     polymer serve build/bundled
+
+### Deploy
+
+    firebase deploy

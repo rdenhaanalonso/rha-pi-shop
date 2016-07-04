@@ -101,11 +101,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         console.log('shop-category-data', '_computeItem', itemName);
         for (var i = 0, item; item = items[i]; ++i) {
           if (item.name == itemName) {
-            console.log('found item ' + itemName);
+            var userId = this.$.userId.value;
+
+            console.log('UserId: ' + userId + ', ItemViewed: ' + itemName);
+            _etmc.push(["setOrgId", "1408165"]);
+            if (userId && userId.lengt > 0) _etmc.push(["setUserInfo", {"email": userId}]);
+            _etmc.push(["trackPageView", { "search" : term }]);
+            _etmc.push(["setOrgId", "1408165"]);
+            _etmc.push(["trackPageView", { "item" : item.name }]);
             return item;
           }
         }
-        console.log(itemName + ' not found');
       },
 
       _fetchItems: function(category, attempts) {

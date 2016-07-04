@@ -235,7 +235,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       _itemChanged: function(item, visible) {
 
-        console.log(item, visible);
+        console.log('shop-detail', '_itemChanged', item, visible);
         if (visible) {
           this.debounce('item-change', function() {
             // The item description contains escaped HTML (e.g. "&lt;br&gt;"), so we need to
@@ -301,5 +301,4 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 
   </script>
-
 </dom-module>
