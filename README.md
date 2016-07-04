@@ -4,14 +4,15 @@
 
 ##### Prerequisites
 
-1. Install [polymer-cli](https://github.com/Polymer/polymer-cli):
-(Need at least npm v0.3.0)
+1. Install Polymer Cli
 
-    npm install -g polymer-cli
+    $ npm install -g polymer-cli
 
 2. Create a Firebase account
 
 3. Install Firebase cli
+
+    $ npm install -g firebase-tools
 
 
 ##### Setup
@@ -50,5 +51,5 @@ This command serves the minified version of the app generated using fragment bun
 
 
 
-
+https://rha-pi-shop.firebaseapp.com/
 https://docs.google.com/document/d/1SCeYIhbf9gRQV6D_OiRTNkQxtz5ZbU3mIbhGFWSI57A
