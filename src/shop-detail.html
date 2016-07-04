@@ -224,9 +224,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           observer: '_offlineChanged'
         },
 
-        failure: Boolean,
-
-        userId: String
+        failure: Boolean
 
       },
 
@@ -253,15 +251,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
               title: item.title
             });
 
-            //var userId = this.$.userId.value;
-            var userId = '';
-            console.log(this);
-            console.log('UserId: ' + userId);
-            //_etmc.push(["setOrgId", "1408165"]);
-            //if (userId && userId.lengt > 0) _etmc.push(["setUserInfo", {"email": userId}]);
-            //_etmc.push(["trackPageView", { "search" : term }]);
-            //_etmc.push(["setOrgId", "1408165"]);
-            //_etmc.push(["trackPageView", { "item" : item.name }]);
+            //SFMC PI
+            console.log('PI VIEW PRODUCT event...', this.item);
+            _etmc.push(["setOrgId", "1408165"]);
+            _etmc.push(["trackPageView", { "item" : item.name }]);
           });
         }
       },
@@ -282,6 +275,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           item: this.item,
           quantity: parseInt(this.$.quantitySelect.value, 10)
         });
+
+        //SFMC PI
+        console.log('PI ADD TO CART event...', this.item);
+        _etmc.push(["setOrgId", "1408165"]);
+        _etmc.push(["trackCart", { "cart": [
+                {"item" : this.item.description, "quantity":  parseInt(this.$.quantitySelect.value, 10), "price" : this.item.price, "unique_id" : this.item.name }
+        ]}]);
+
         /*this.fire('add-cart-item', {
           item: this.item,
           quantity: parseInt(this.$.quantitySelect.value, 10),
