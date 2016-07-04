@@ -140,7 +140,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="row input-row">
                   <shop-input>
                     <input type="email" id="accountEmail" name="accountEmail"
-                        placeholder="Email" autofocus required
+                        placeholder="Email" autofocus
                         aria-labelledby="accountEmailLabel accountInfoHeading">
                     <shop-md-decorator error-message="Invalid Email" aria-hidden="true">
                       <label id="accountEmailLabel">Email</label>
@@ -151,7 +151,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="row input-row">
                   <shop-input>
                     <input type="tel" id="accountPhone" name="accountPhone" pattern="\d{10,}"
-                        placeholder="Phone Number" required
+                        placeholder="Phone Number"
                         aria-labelledby="accountPhoneLabel accountInfoHeading">
                     <shop-md-decorator error-message="Invalid Phone Number" aria-hidden="true">
                       <label id="accountPhoneLabel">Phone Number</label>
@@ -163,7 +163,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="row input-row">
                   <shop-input>
                     <input type="text" id="shipAddress" name="shipAddress" pattern=".{5,}"
-                        placeholder="Address" required
+                        placeholder="Address"
                         aria-labelledby="shipAddressLabel shipAddressHeading">
                     <shop-md-decorator error-message="Invalid Address" aria-hidden="true">
                       <label id="shipAddressLabel">Address</label>
@@ -174,7 +174,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="row input-row">
                   <shop-input>
                     <input type="text" id="shipCity" name="shipCity" pattern=".{2,}"
-                        placeholder="City" required
+                        placeholder="City"
                         aria-labelledby="shipCityLabel shipAddressHeading">
                     <shop-md-decorator error-message="Invalid City" aria-hidden="true">
                       <label id="shipCityLabel">City</label>
@@ -185,7 +185,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="row input-row">
                   <shop-input>
                     <input type="text" id="shipState" name="shipState" pattern=".{2,}"
-                        placeholder="State/Province" required
+                        placeholder="State/Province"
                         aria-labelledby="shipStateLabel shipAddressHeading">
                     <shop-md-decorator error-message="Invalid State/Province" aria-hidden="true">
                       <label id="shipStateLabel">State/Province</label>
@@ -194,7 +194,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </shop-input>
                   <shop-input>
                     <input type="text" id="shipZip" name="shipZip" pattern=".{4,}"
-                        placeholder="Zip/Postal Code" required
+                        placeholder="Zip/Postal Code"
                         aria-labelledby="shipZipLabel shipAddressHeading">
                     <shop-md-decorator error-message="Invalid Zip/Postal Code" aria-hidden="true">
                       <label id="shipZipLabel">Zip/Postal Code</label>
@@ -205,7 +205,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="column">
                   <label id="shipCountryLabel" class="shop-select-label">Country</label>
                   <shop-select>
-                    <select id="shipCountry" name="shipCountry" required
+                    <select id="shipCountry" name="shipCountry"
                         aria-labelledby="shipCountryLabel shipAddressHeading">
                       <option value="US" selected>United States</option>
                       <option value="CA">Canada</option>
@@ -228,7 +228,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <div class="row input-row">
                     <shop-input>
                       <input type="text" id="billAddress" name="billAddress" pattern=".{5,}"
-                          placeholder="Address" required$="[[hasBillingAddress]]"
+                          placeholder="Address"
                           autocomplete="billing street-address"
                           aria-labelledby="billAddressLabel billAddressHeading">
                       <shop-md-decorator error-message="Invalid Address" aria-hidden="true">
@@ -240,7 +240,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <div class="row input-row">
                     <shop-input>
                       <input type="text" id="billCity" name="billCity" pattern=".{2,}"
-                          placeholder="City" required$="[[hasBillingAddress]]"
+                          placeholder="City"
                           autocomplete="billing address-level2"
                           aria-labelledby="billCityLabel billAddressHeading">
                       <shop-md-decorator error-message="Invalid City" aria-hidden="true">
@@ -252,7 +252,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <div class="row input-row">
                     <shop-input>
                       <input type="text" id="billState" name="billState" pattern=".{2,}"
-                          placeholder="State/Province" required$="[[hasBillingAddress]]"
+                          placeholder="State/Province"
                           autocomplete="billing address-level1"
                           aria-labelledby="billStateLabel billAddressHeading">
                       <shop-md-decorator error-message="Invalid State/Province" aria-hidden="true">
@@ -262,7 +262,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </shop-input>
                     <shop-input>
                       <input type="text" id="billZip" name="billZip" pattern=".{4,}"
-                          placeholder="Zip/Postal Code" required$="[[hasBillingAddress]]"
+                          placeholder="Zip/Postal Code"
                           autocomplete="billing postal-code"
                           aria-labelledby="billZipLabel billAddressHeading">
                       <shop-md-decorator error-message="Invalid Zip/Postal Code" aria-hidden="true">
@@ -274,7 +274,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <div class="column">
                     <label id="billCountryLabel" class="shop-select-label">Country</label>
                     <shop-select>
-                      <select id="billCountry" name="billCountry" required$="[[hasBillingAddress]]"
+                      <select id="billCountry" name="billCountry"
                           autocomplete="billing country"
                           aria-labelledby="billCountryLabel billAddressHeading">
                         <option value="US" selected>United States</option>
@@ -293,7 +293,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="row input-row">
                   <shop-input>
                     <input type="text" id="ccName" name="ccName" pattern=".{3,}"
-                        placeholder="Cardholder Name" required
+                        placeholder="Cardholder Name"
                         autocomplete="cc-name">
                     <shop-md-decorator error-message="Invalid Cardholder Name" aria-hidden="true">
                       <label for="ccName">Cardholder Name</label>
@@ -304,7 +304,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <div class="row input-row">
                   <shop-input>
                     <input type="tel" id="ccNumber" name="ccNumber" pattern="[\d\s]{15,}"
-                        placeholder="Card Number" required
+                        placeholder="Card Number"
                         autocomplete="cc-number">
                     <shop-md-decorator error-message="Invalid Card Number" aria-hidden="true">
                       <label for="ccNumber">Card Number</label>
@@ -316,7 +316,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   <div class="column">
                     <label for="ccExpMonth">Expiry</label>
                     <shop-select>
-                      <select id="ccExpMonth" name="ccExpMonth" required
+                      <select id="ccExpMonth" name="ccExpMonth"
                            autocomplete="cc-exp-month" aria-label="Expiry month">
                         <option value="01" selected>Jan</option>
                         <option value="02">Feb</option>
@@ -337,7 +337,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     </shop-select>
                   </div>
                   <shop-select>
-                    <select id="ccExpYear" name="ccExpYear" required
+                    <select id="ccExpYear" name="ccExpYear"
                         autocomplete="cc-exp-year" aria-label="Expiry year">
                       <option value="2016" selected>2016</option>
                       <option value="2017">2017</option>
@@ -357,7 +357,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                   </shop-select>
                   <shop-input>
                     <input type="tel" id="ccCVV" name="ccCVV" pattern="\d{3,4}"
-                        placeholder="CVV" required
+                        placeholder="CVV"
                         autocomplete="cc-csc">
                     <shop-md-decorator error-message="Invalid CVV" aria-hidden="true">
                       <label for="ccCVV">CVV</label>
@@ -613,6 +613,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           body.cartItemsId.push(cartItem.item.name);
           body.cartItemsQuantity.push(cartItem.quantity);
         });
+
+        //SFMC PI
+        console.log('PI PURCHASE event...', this.cart);
+        var etmcCart = {};
+        etmcCart.cart = [];
+        for (i = 0; i < this.cart.length; i++){
+          var etmcCartItem = {};
+          etmcCartItem.item = this.cart[i].item.name;
+          etmcCartItem.quantity = this.cart[i].quantity;
+          etmcCartItem.price = this.cart[i].item.price;
+          etmcCartItem.unique_id = this.cart[i].item.name;
+          etmcCart.cart.push(etmcCartItem);
+        }
+        _etmc.push(["setOrgId", "1408165"]);
+        _etmc.push(["trackConversion", etmcCart]);
       },
 
       /**
