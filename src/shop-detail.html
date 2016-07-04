@@ -276,13 +276,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           quantity: parseInt(this.$.quantitySelect.value, 10)
         });
 
-        //SFMC PI
-        console.log('PI ADD TO CART event...', this.item);
-        _etmc.push(["setOrgId", "1408165"]);
-        _etmc.push(["trackCart", { "cart": [
-                {"item" : this.item.name, "quantity":  parseInt(this.$.quantitySelect.value, 10), "price" : this.item.price}
-        ]}]);
-
         /*this.fire('add-cart-item', {
           item: this.item,
           quantity: parseInt(this.$.quantitySelect.value, 10),

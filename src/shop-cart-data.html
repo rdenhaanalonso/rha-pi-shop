@@ -58,6 +58,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           detail.quantity += this.cart[i].quantity;
         }
         this.setItem(detail);
+
+        //SFMC PI
+        console.log('PI ADD TO CART event...', this.cart);
+        var etmcCart = {};
+        etmcCart.cart = [];
+        for (int = 0; i < cart.size; i++){
+          var etmcCartItem = {};
+          etmcCartItem.item = this.cart[i].name;
+          etmcCartItem.quantity = this.cart[i].quantity;
+          etmcCartItem.price = this.cart[i].price;
+          etmcCartItem.unique_id = this.cart[i].name;
+          etmcCart.push(etmcCartItem);
+        }
+        _etmc.push(["setOrgId", "1408165"]);
+        _etmc.push(["trackCart", etmcCart]);
+//        _etmc.push(["trackCart", { "cart": [
+//          {"item" : this.item.name, "quantity":  parseInt(this.$.quantitySelect.value, 10), "price" : this.item.price, "unique_id" : this.item.name }
+//        ]}]);
       },
 
       setItem: function(detail) {
@@ -77,10 +95,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             this.push('cart', detail);
           }
         }
+
+        //SFMC PI
+        console.log('PI ADD TO CART event...', this.cart);
+        var etmcCart = {};
+        etmcCart.cart = [];
+        for (int = 0; i < cart.size; i++){
+          var etmcCartItem = {};
+          etmcCartItem.item = this.cart[i].name;
+          etmcCartItem.quantity = this.cart[i].quantity;
+          etmcCartItem.price = this.cart[i].price;
+          etmcCartItem.unique_id = this.cart[i].name;
+          etmcCart.push(etmcCartItem);
+        }
+        _etmc.push(["setOrgId", "1408165"]);
+        _etmc.push(["trackCart", etmcCart]);
       },
 
       clearCart: function() {
         this.cart = [];
+        //SFMC PI
+        _etmc.push(["setOrgId", "1408165"]);
+        _etmc.push(["trackCart", { "clear_cart": true } ]);
       },
 
       _computeNumItems: function() {
