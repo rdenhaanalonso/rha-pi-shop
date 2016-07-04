@@ -47,3 +47,8 @@ This command serves the minified version of the app generated using fragment bun
     polymer build
 
     firebase deploy
+
+
+
+
+https://docs.google.com/document/d/1SCeYIhbf9gRQV6D_OiRTNkQxtz5ZbU3mIbhGFWSI57A
