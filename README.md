@@ -4,20 +4,20 @@
 
 ##### Prerequisites
 
-Install [polymer-cli](https://github.com/Polymer/polymer-cli):
+1. Install [polymer-cli](https://github.com/Polymer/polymer-cli):
 (Need at least npm v0.3.0)
 
     npm install -g polymer-cli
 
-Create a Firebase account
+2. Create a Firebase account
 
-Install Firebase cli
+3. Install Firebase cli
 
 
 ##### Setup
 
-    git clone https://github.com/Polymer/shop.git
-    cd shop
+    git clone https://github.com/rdenhaanalonso/rha-pi-shop.git
+    cd rha-pi-shop
     bower install
 
 ### Start the development server
@@ -43,5 +43,7 @@ This command serves the minified version of the app generated using fragment bun
     polymer serve build/bundled
 
 ### Deploy
+
+    polymer build
 
     firebase deploy
