@@ -31,7 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       shop-image::before {
         content: "";
         display: block;
-        padding-top: 100%;
+        padding-top: 50%;
       }
 
       .title {
@@ -54,7 +54,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <shop-image src="[[item.image]]" alt="[[item.title]]"></shop-image>
     <div class="title">[[item.title]]</div>
     <span class="price">[[_formatPrice(item.price)]]</span>
-
   </template>
 
   <script>
@@ -72,7 +71,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _formatPrice: function(price) {
         return price ? '$' + price.toFixed(2) : '';
       }
-
     });
 
   </script>

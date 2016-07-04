@@ -47,6 +47,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       ],
 
       _onSelectedItemChanged: function(selectedItem) {
+        console.log('_onSelectedItemChanged', selectedItem);
         if (selectedItem === undefined && this.selected) return;
 
         this.$.overlay.target = selectedItem;

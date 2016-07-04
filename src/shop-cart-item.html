@@ -195,7 +195,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <shop-md-decorator aria-hidden="true"></shop-md-decorator>
           </shop-select>
         </div>
-        <div class="size">Size: <span>[[entry.size]]</span></div>
+        <!--<div class="size">Size: <span>[[entry.size]]</span></div>-->
         <div class="price">[[_formatPrice(entry.item.price)]]</div>
 
         <!--
@@ -226,8 +226,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       _setCartItem: function(quantity) {
         this.fire('set-cart-item', {
           item: this.entry.item,
-          quantity: quantity,
-          size: this.entry.size
+          quantity: quantity
         });
       },
 
@@ -241,6 +240,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     });
 
+    /*_setCartItem: function(quantity) {
+      this.fire('set-cart-item', {
+        item: this.entry.item,
+        quantity: quantity,
+        size: this.entry.size
+      });
+    },*/
   </script>
 
 </dom-module>
