@@ -613,21 +613,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           body.cartItemsId.push(cartItem.item.name);
           body.cartItemsQuantity.push(cartItem.quantity);
         });
-
-        //SFMC PI
-        console.log('PI PURCHASE event...', this.cart);
-        var etmcCart = {};
-        etmcCart.cart = [];
-        for (i = 0; i < this.cart.length; i++){
-          var etmcCartItem = {};
-          etmcCartItem.item = this.cart[i].item.name;
-          etmcCartItem.quantity = this.cart[i].quantity;
-          etmcCartItem.price = this.cart[i].item.price;
-          etmcCartItem.unique_id = this.cart[i].item.name;
-          etmcCart.cart.push(etmcCartItem);
-        }
-        _etmc.push(["setOrgId", "1408165"]);
-        _etmc.push(["trackConversion", etmcCart]);
       },
 
       /**
@@ -641,6 +626,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this._setWaiting(true);
 
         if (response.success) {
+
+          //SFMC PI
+          console.log('PI PURCHASE event...', this.cart);
+          var etmcCart = {};
+          etmcCart.cart = [];
+          for (i = 0; i < this.cart.length; i++){
+            var etmcCartItem = {};
+            etmcCartItem.item = this.cart[i].item.name;
+            etmcCartItem.quantity = this.cart[i].quantity;
+            etmcCartItem.price = this.cart[i].item.price;
+            etmcCartItem.unique_id = this.cart[i].item.name;
+            etmcCart.cart.push(etmcCartItem);
+          }
+          _etmc.push(["setOrgId", "1408165"]);
+          _etmc.push(["trackConversion", etmcCart]);
+
           this._pushState('success');
           this._reset();
           this.fire('clear-cart');
